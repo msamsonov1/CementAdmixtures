@@ -1,0 +1,25 @@
+# Input the conditions
+high_temp = input("Will the concrete be exposed to high temperatures? (y/n): ")
+freeze_thaw = input("Will the concrete be exposed to freeze-thaw cycles? (y/n): ")
+corrosive = input("Will the concrete be exposed to corrosive environments? (y/n): ")
+gap_filling = input("Is gap filling required? (y/n): ")
+plasticizing = input("Is plasticizing required? (y/n): ")
+
+# Determine the admixtures to use based on the conditions
+admixtures = []
+if high_temp == "y":
+    admixtures.append("retarder and gypsum")
+if freeze_thaw == "y":
+    admixtures.append("air-entrained and air bubbles")
+if corrosive == "y":
+    admixtures.append("corrosion-inhibiting and high salinity sodium nitrite")
+if gap_filling == "y":
+    admixtures.append("pozzolanic fill")
+if plasticizing == "y":
+    admixtures.append("water reducer and plasticizers")
+
+# Output the result
+if len(admixtures) == 0:
+    print("No admixtures needed for this project.")
+else:
+    print("Use the following admixtures: " + ", ".join(admixtures))
